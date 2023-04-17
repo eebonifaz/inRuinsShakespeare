@@ -15,7 +15,7 @@ export const DonadoresPage = () => {
   const dispatch = useDispatch(); 
 
   const onClickNewDonors = () => {
-    // dispatch( startNewDonors() );
+    dispatch( startNewDonors() );
     dispatch( setPage( 'create' )  )
   }
 

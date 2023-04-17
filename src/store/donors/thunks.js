@@ -5,8 +5,8 @@ import { loadDonors } from "../../helpers/loadDonors"
 
 const newDonor = {
     name: '',
-    firstname: 'Hola',
-    lastname: 'Mundo',
+    firstname: '',
+    lastname: '',
     companyname: '',
     typeperson: '',
     street: '',
@@ -18,6 +18,11 @@ const newDonor = {
     createdate: '',
     eblast: '',
     attendance: '',
+    type_person: '',
+    donor_level: '',
+    emails: [],
+    phones: [],
+    comments: [],
     date: new Date().getTime(),
 }
 
