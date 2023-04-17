@@ -6,8 +6,7 @@ const today = new Date;
 
 export const DonadoresEdit = () => {
     const { active } = useSelector( state => state.donor )
-
-    console.log( active );
+ 
     return (
         <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={{ mb: 1 }}>
             <Grid item>

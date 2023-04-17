@@ -5,9 +5,9 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
     const [ formState, setFormState ] = useState( initialForm );
     const [ formValidation, setFormValidation ] = useState({});
 
-    useEffect(() => {
-        createValidators();
-    }, [ formState ])
+    // useEffect(() => {
+    //     createValidators();
+    // }, [ formState ])
 
     useEffect(() => {
         setFormState( initialForm );
@@ -30,10 +30,19 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
             ...formState,
             [ name ]: value
         });
+        console.log( name, value )
     }
 
     const onResetForm = () => {
         setFormState( initialForm );
+    }
+
+    const addElementArray = ( target ) => {   
+        setFormState({
+            ...formState,
+            'emails': 'hola',
+        });
+        console.log( formState )
     }
 
     const createValidators = () => {
@@ -56,7 +65,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         formState,
         onInputChange,
         onResetForm,
-
+        addElementArray,
         ...formValidation,
         isFormValid
     }

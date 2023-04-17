@@ -29,8 +29,11 @@ export const DonadoresCreate = () => {
         attendance,
         type_person,
         donor_level,
+        emails,
+        phones,
+        comments,
+        addElementArray,
         onInputChange, formState } = useForm( donor );
-    console.log( attendance );
     return (
         <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={{ mb: 1 }}>
             <Grid item>
@@ -244,10 +247,23 @@ export const DonadoresCreate = () => {
                 </Box>
                 <Box  
                     noValidate
-                    autoComplete="off"                
+                    autoComplete="off"          
+                          
                     sx={{ width:"100%"}}
                 >
- 
+                        <Box sx={{ display: 'flex', justifyContent: "flex-end"}} >
+                            <IconButton 
+                                size='large' 
+                                sx={{
+                                color: 'white',
+                                backgroundColor: 'primary.main',
+                                ':hover': { backgroundColor: 'primary.main', opacity: 0.9 },  
+                                }}  
+                                onClick={ () => {addElementArray('emails')} } 
+                            >
+                                <AddOutlined sx={{ fontSize: 20 }} />
+                            </IconButton>
+                        </Box>                         
                 </Box>
             </Grid>
     
