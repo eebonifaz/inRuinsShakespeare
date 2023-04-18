@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addNewEmail } from '../store/donors/donorsSlides';
 
 export const useForm = ( initialForm = {}, formValidations = {}) => {
   
     const [ formState, setFormState ] = useState( initialForm );
     const [ formValidation, setFormValidation ] = useState({});
 
+    const dispatch = useDispatch()
     // useEffect(() => {
     //     createValidators();
     // }, [ formState ])
@@ -29,19 +32,39 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         setFormState({
             ...formState,
             [ name ]: value
-        });
-        console.log( name, value )
+        }); 
+    }
+
+    const onSelectChange = ({target}) => {
+        const { name, value } = target;
+        setFormState({
+            ...formState,
+            [ name ]: value
+        }); 
+        console.log( formState )
+    }
+
+    const onMultiple = (e, key) => {
+        const { target } = e
+        const { name, value } = target;
+        
+        console.log( name  )
+        console.log( value )
+        console.log( key )
     }
 
     const onResetForm = () => {
         setFormState( initialForm );
     }
 
-    const addElementArray = ( target ) => {   
-        setFormState({
-            ...formState,
-            'emails': 'hola',
-        });
+    const addElementArray = ( target ) => {
+
+        dispatch( addNewEmail( target ) );
+        // setFormState({
+        //     ...formState,
+        //     'emails': 'hola',
+        // });
+        
         console.log( formState )
     }
 
@@ -66,6 +89,8 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         onInputChange,
         onResetForm,
         addElementArray,
+        onSelectChange,
+        onMultiple,
         ...formValidation,
         isFormValid
     }
