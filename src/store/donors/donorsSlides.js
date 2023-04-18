@@ -31,8 +31,28 @@ export const donorSlice = createSlice({
             state.page = action.payload;
         },
         updatesDonors: ( state, action ) => {
-
+            
         },
+        addNewEmail: (state, action ) => {
+            if( action.payload == 'emails' ){  
+                state.active.emails = [ ...state.active.emails, { 
+                    key: state.active.emails.length + 1,
+                    value: ""
+                } ]
+            }
+            if( action.payload == 'phones' ){  
+                state.active.phones = [ ...state.active.phones, {
+                    key: state.active.phones.length + 1,
+                    value: ""
+                } ]
+            }
+            if( action.payload == 'comments' ){  
+                state.active.comments = [ ...state.active.comments, {
+                    key: state.active.comments.length + 1,
+                    value: ""
+                } ]
+            }
+        }
     }
 });
 
@@ -44,4 +64,5 @@ export const {
     setSaving,
     updatesDonors,
     setPage,
+    addNewEmail,
 } = donorSlice.actions;

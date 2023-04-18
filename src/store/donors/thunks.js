@@ -20,9 +20,9 @@ const newDonor = {
     attendance: '',
     type_person: '',
     donor_level: '',
-    emails: [],
-    phones: [],
-    comments: [],
+    emails: [{ key: 1, value: ""} ],
+    phones: [{ key: 1, value: ""} ],
+    comments: [{ key: 1, value: ""} ],
     date: new Date().getTime(),
 }
 

@@ -33,6 +33,8 @@ export const DonadoresCreate = () => {
         phones,
         comments,
         addElementArray,
+        onSelectChange,
+        onMultiple,
         onInputChange, formState } = useForm( donor );
     return (
         <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={{ mb: 1 }}>
@@ -209,17 +211,16 @@ export const DonadoresCreate = () => {
                     autoComplete="off"                
                 >
                     <FormControl fullWidth>
-                        <InputLabel id="value-text-tp" >{`Type Person`} </InputLabel>
+                        <InputLabel id="value-text-tp" >{`Type Person`}  </InputLabel>
                         <Select
                             labelId="value-text-tp"   
-                            label={`Type Person`} 
-                            name="type_person"
-                            value={ type_person }
-                            onChange={ onInputChange }
+                            label={`Type Person`}  
+                            value={ type_person } 
+                            refs="type_person"
+                            name="type_person" 
+                            onChange={ onSelectChange }
                         >
-                            <MenuItem value="">
-                            <em>None</em>
-                            </MenuItem>
+                            <MenuItem value=""><em>None</em></MenuItem>
                             <MenuItem value="Kings & Queens">Kings & Queens</MenuItem>
                             <MenuItem value="Dukes & Duchesses">Dukes & Duchesses</MenuItem>
                             <MenuItem value="Jesters">Jesters</MenuItem>
@@ -232,10 +233,11 @@ export const DonadoresCreate = () => {
                         <InputLabel id="value-text" >{`Donor Level`}</InputLabel>
                         <Select
                             labelId="value-text"   
-                            label={`Donor Level`} 
-                            name="donor_level"
-                            value={ donor_level }
-                            onChange={ onInputChange }
+                            label={`Donor Level`}  
+                            value={ donor_level } 
+                            name="donor_level" 
+                            refs="donor_level"
+                            onChange={ onSelectChange }
                         >
                             <MenuItem value="">
                             <em>None</em>
@@ -247,10 +249,30 @@ export const DonadoresCreate = () => {
                 </Box>
                 <Box  
                     noValidate
-                    autoComplete="off"          
-                          
+                    autoComplete="off"
                     sx={{ width:"100%"}}
                 >
+                        {
+                            emails?.map( ({key,value}) => ( 
+                                <TextField
+                                    type="text"
+                                    variant="standard"
+                                    fullWidth 
+                                    placeholder={`Entry a Email`}
+                                    label={`Email`}
+                                    value={value}
+                                    name='emails'
+                                    onChange={ 
+                                        (e) => 
+                                            {   
+                                                onMultiple(e, key)
+                                            } 
+                                    }
+                                    sx={{ border: 'none', mb: 1, width: "100%" }}
+                                />    
+                            ))
+                        }
+
                         <Box sx={{ display: 'flex', justifyContent: "flex-end"}} >
                             <IconButton 
                                 size='large' 
@@ -260,6 +282,81 @@ export const DonadoresCreate = () => {
                                 ':hover': { backgroundColor: 'primary.main', opacity: 0.9 },  
                                 }}  
                                 onClick={ () => {addElementArray('emails')} } 
+                            >
+                                <AddOutlined sx={{ fontSize: 20 }} />
+                            </IconButton>
+                        </Box>                         
+                </Box>
+
+                
+                <Box  
+                    noValidate
+                    autoComplete="off"
+                    sx={{ width:"100%"}}
+                >
+                        {
+                            phones?.map( (value) => (
+                                <>
+                                    <TextField
+                                        type="text"
+                                        variant="standard"
+                                        fullWidth
+                                        key={value}
+                                        placeholder={`Entry a Phones`}
+                                        label={`Phones`}
+                                        sx={{ border: 'none', mb: 1, width: "100%" }}
+                                    />   
+                                </>
+                            ))
+                        }
+
+                        <Box sx={{ display: 'flex', justifyContent: "flex-end"}} >
+                            <IconButton 
+                                size='large' 
+                                sx={{
+                                color: 'white',
+                                backgroundColor: 'primary.main',
+                                ':hover': { backgroundColor: 'primary.main', opacity: 0.9 },  
+                                }}  
+                                onClick={ () => {addElementArray('phones')} } 
+                            >
+                                <AddOutlined sx={{ fontSize: 20 }} />
+                            </IconButton>
+                        </Box>                         
+                </Box>
+
+
+                
+                <Box  
+                    noValidate
+                    autoComplete="off"
+                    sx={{ width:"100%"}}
+                >
+                        {
+                            comments?.map( (value) => (
+                                <>
+                                    <TextField
+                                        type="text"
+                                        variant="standard"
+                                        fullWidth
+                                        key={value}
+                                        placeholder={`Entry a Comments`}
+                                        label={`Comment`}
+                                        sx={{ border: 'none', mb: 1, width: "100%" }}
+                                    />   
+                                </>
+                            ))
+                        }
+
+                        <Box sx={{ display: 'flex', justifyContent: "flex-end"}} >
+                            <IconButton 
+                                size='large' 
+                                sx={{
+                                color: 'white',
+                                backgroundColor: 'primary.main',
+                                ':hover': { backgroundColor: 'primary.main', opacity: 0.9 },  
+                                }}  
+                                onClick={ () => {addElementArray('comments')} } 
                             >
                                 <AddOutlined sx={{ fontSize: 20 }} />
                             </IconButton>
