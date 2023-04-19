@@ -36,13 +36,22 @@ export const DonadoresCreate = () => {
         onSelectChange,
         onMultiple,
         onInputChange, formState } = useForm( donor );
+
+        const onSubmit = () => {
+            console.log( formState )
+        }
+
     return (
         <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={{ mb: 1 }}>
             <Grid item>
                 <Typography fontSize={ 39 } fontWeight='light' >{today.toDateString()}</Typography>
             </Grid>
             <Grid item>
-                <Button color="primary" sx={{ padding: 2 }}>
+                <Button 
+                    color="primary" 
+                    sx={{ padding: 2 }}
+                    onClick={onSubmit}    
+                >
                     <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
                     Guardar
                 </Button>
@@ -215,7 +224,7 @@ export const DonadoresCreate = () => {
                         <Select
                             labelId="value-text-tp"   
                             label={`Type Person`}  
-                            value={ type_person } 
+                            value={ type_person || "" } 
                             refs="type_person"
                             name="type_person" 
                             onChange={ onSelectChange }
@@ -234,8 +243,8 @@ export const DonadoresCreate = () => {
                         <Select
                             labelId="value-text"   
                             label={`Donor Level`}  
-                            value={ donor_level } 
-                            name="donor_level" 
+                            value={ donor_level || `` }  
+                            name="donor_level"  
                             refs="donor_level"
                             onChange={ onSelectChange }
                         >

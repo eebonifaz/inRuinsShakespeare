@@ -40,8 +40,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         setFormState({
             ...formState,
             [ name ]: value
-        }); 
-        console.log( formState )
+        });  
     }
 
     const onMultiple = (e, key) => {

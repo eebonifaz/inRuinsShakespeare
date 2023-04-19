@@ -30,7 +30,7 @@ export const SideBar = ({drawerWidth}) => {
             >
                 <Toolbar>
                     <Typography variant="h6" noWrap component={'div'} >
-                    Shakespeare In Ruins
+                    App
                     </Typography>
                 </Toolbar>
                 <Divider />
@@ -41,7 +41,7 @@ export const SideBar = ({drawerWidth}) => {
                             <TurnedInNot />
                         </ListItemButton>
                         <Grid container>
-                            <ListItemText primary={`Donnors`} />  
+                            <ListItemText primary={`Marcas`} />  
                         </Grid>
                     </ListItemButton>
                 </List>
