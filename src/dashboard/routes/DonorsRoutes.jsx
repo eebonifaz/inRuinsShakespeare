@@ -7,9 +7,9 @@ export const DonorsRoutes = () => {
   return (
     <Routes>
         {/* <Route path="/" element={ <DonadoresPage /> } /> */}
-        <Route path="/donors" element={ <DonadoresPage /> } /> 
+        <Route path="/marcas" element={ <DonadoresPage /> } /> 
 
-        <Route path="/*" element={ <Navigate to="/donors" /> } />
+        <Route path="/*" element={ <Navigate to="/marcas" /> } />
     </Routes>
   )
 }

@@ -1,0 +1,35 @@
+/* Hoja de estilos  */
+.css-ib4nz1-MuiGrid-root { background: #F6F7FB !important;}
+h5.MuiTypography-root.MuiTypography-h5.css-1jcm1rz-MuiTypography-root { text-align: center;}
+header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionFixed.mui-fixed.css-bj679v-MuiPaper-root-MuiAppBar-root {
+ background-color: #1C1C38 !important;}
+ .css-1ujqmu5-MuiDrawer-docked .MuiDrawer-paper {    background: #FFF !important;
+}
+/*.css-128fb87-MuiDataGrid-toolbarContainer {   background: #F6F7FB !important; }*/
+.css-t89xny-MuiDataGrid-columnHeaderTitle {
+    color: #898A9A;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.css-zxdg2z {  background: #F6F7FB !important;}
+.css-yrdy0g-MuiDataGrid-columnHeaderRow {  background: #F6F7FB !important;
+}
+.css-10hburv-MuiTypography-root {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.css-ckc3v0-MuiDataGrid-root {   border-color: #fff !important;}
+
+.css-19erhcg-MuiTypography-root {  font-size: 0.9rem !important;}
+.css-tjidwy-MuiButtonBase-root-MuiIconButton-root{padding: 0px !important;}
+.css-hyum1k-MuiToolbar-root {
+    min-height: 44px !important;
+}
+
+/* demora un poquito que recompile toda la app, dale ya na no cogio el translate */

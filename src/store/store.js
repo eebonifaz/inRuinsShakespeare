@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./auth";
-import { donorSlice } from "./donors";
+import { marcasSlides } from "./marcas/marcasSlides";
+// import { donorSlice } from "./donors";
 
 
 export const store = configureStore({
     reducer: {
         auth: authSlice.reducer,
-        donor: donorSlice.reducer,
+        // donor: donorSlice.reducer,
+        marca: marcasSlides.reducer,
     }
 });

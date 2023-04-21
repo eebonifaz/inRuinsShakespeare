@@ -1,5 +1,5 @@
-import { collection, doc, setDoc } from "firebase/firestore/lite"
-import { FirebaseDB } from "../../firebase/config"
+// import { collection, doc, setDoc } from "firebase/firestore/lite"
+// import { FirebaseDB } from "../../firebase/config"
 import { addNewDonor, creatingNewDonor, setActiveDonor, setDonors } from "./donorsSlides"
 import { loadDonors } from "../../helpers/loadDonors"
 
@@ -47,7 +47,7 @@ export const startLoadingDonors = () => {
   return  async ( dispatch, getState ) => {
     const donors = await loadDonors();
 
-    dispatch( setDonors(donors) );
+    // dispatch( setDonors(donors) );
   }
 }
 

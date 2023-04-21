@@ -7,7 +7,7 @@ import { setPage } from "../../store/donors";
 
 export const SideBar = ({drawerWidth}) => {
 
-    const { donors } = useSelector( state => state.donor );
+    const { marcas } = useSelector( state => state.marca );
     const dispatch = useDispatch(); 
         
     const onDonnorList = ( event ) => { 
@@ -30,7 +30,7 @@ export const SideBar = ({drawerWidth}) => {
             >
                 <Toolbar>
                     <Typography variant="h6" noWrap component={'div'} >
-                    Shakespeare In Ruins
+                        <img src="https://pilegaltech.com/logo-lexvalor6.png" />
                     </Typography>
                 </Toolbar>
                 <Divider />
@@ -41,7 +41,7 @@ export const SideBar = ({drawerWidth}) => {
                             <TurnedInNot />
                         </ListItemButton>
                         <Grid container>
-                            <ListItemText primary={`Donnors`} />  
+                            <ListItemText primary={`Mis Marcas`} />  
                         </Grid>
                     </ListItemButton>
                 </List>
