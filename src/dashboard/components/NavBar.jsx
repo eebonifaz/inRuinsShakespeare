@@ -30,6 +30,7 @@ export const NavBar = ({drawerWidth = 240}) => {
 
                 <Grid container direction="row" justifyContent={'space-between'} alignItems={'center'}>
                     <Typography variant="h6" noWrap component={'div'}>Listado</Typography>
+                    <Typography variant="h6" noWrap component={'div'}></Typography>
 
                     
                     <IconButton
